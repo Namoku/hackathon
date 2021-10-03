@@ -17,8 +17,12 @@ function showPosition(position) {
 	.then(data => {
 		locationCityState["city"] = data.address.city;
 		locationCityState["state"] = data.address.state;
+		if (formulario = document.getElementById("formulario")) {
+			document.getElementById("inputLocation").value = locationCityState.city.toUpperCase() + ", " + locationCityState.state.toUpperCase();
+		}
 	})
-	.catch(e => {
-		console.log(e);
-	})
+		.catch(e => {
+			console.log(e);
+		})
 }
+
