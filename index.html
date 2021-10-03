@@ -103,30 +103,6 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -299,22 +275,8 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Monthly active cases scale</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
+                                    <h6 class="m-0 font-weight-bold text-primary">Daily active cases</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -330,22 +292,8 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Active cases by age</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
+                                    <h6 class="m-0 font-weight-bold text-primary">Cases by sex</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -377,7 +325,7 @@
                             <!-- Project Card Example -->
                             
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
                                     <h6 class="m-0 font-weight-bold text-primary">States of México with the most contagions</h6>
                                 </div>
                                 <div class="card-body">
@@ -414,14 +362,11 @@
                                 </div>
                             </div>
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
                                     <h6 class="m-0 font-weight-bold text-primary">Measures to prevent contagion</h6>
                                 </div>
                                 
-                            </div>
-                            <!-- Medidas de Seguridad -->
-                            
-                            <div class="row">
+                            <div class="row card-body">
                                 <a class="btn col-lg-6 mb-4 palette-1" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks">
                                     <div class="card color-2 text-white shadow">
                                         <div class="card-body text-center">
@@ -483,6 +428,9 @@
                                     </div>
                                 </a>                               
                             </div>
+                            </div>
+                            <!-- Medidas de Seguridad -->
+                            
 
                         </div>
 
@@ -490,7 +438,7 @@
 
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
                                     <h6 class="m-0 font-weight-bold text-primary">Have you already vaccinated?</h6>
                                 </div>
                                 <div class="card-body">
@@ -505,7 +453,7 @@
 
                             <!-- Approach -->
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center">
                                     <h6 class="m-0 font-weight-bold text-primary">Symptoms of Covid-19</h6>
                                 </div>
                                 <div class="card-body">
@@ -527,7 +475,7 @@
                                         <li>Shortness of breath or dyspnea</li>
                                         <li>Loss of mobility or speech or feeling confused</li>
                                         <li>Chest pain</li></ul></p>
-                                        <a href="https://health.ucdavis.edu/coronavirus/covid-19-information/coronavirus-symptoms.html">More información &rarr;</a>
+                                        <a href="https://health.ucdavis.edu/coronavirus/covid-19-information/coronavirus-symptoms.html">More information &rarr;</a>
 
                                 </div>
                             </div>
@@ -561,26 +509,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
