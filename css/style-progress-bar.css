@@ -1,0 +1,156 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #2c303a;
+
+}
+.container1 {
+    margin: 100px auto;
+    width: 500px;
+    text-align: center;
+  }
+  
+  .progress1 {
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+      0 1px rgba(255, 255, 255, 0.08);
+  }
+  
+  .progress1-bar {
+    height: 18px;
+    background-color: #ee303c;
+    border-radius: 4px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+  }
+
+  @keyframes progressAnimationStrike {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .progress1-striped .progress1-bar {
+    background-color: #fcbc51;
+    width: 100%;
+    
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgb(63, 236, 208) 50%,
+      rgb(2, 116, 91) 75%,
+      transparent 75%,
+      transparent
+    );
+    animation: progressAnimationStrike 6s;
+  }
+
+  
+  
+  .progress-bar2 {
+    height: 18px;
+    border-radius: 30px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+  }
+  
+  .progress-moved .progress-bar2 {
+    width: 100%;
+    background-color: #c03f99c0;
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgb(245, 156, 225) 100%,
+      rgb(112, 9, 81) 100%,
+      transparent 75%,
+      transparent
+    );
+    transition: 1s linear;
+    transition-property: width, #ebb2bf;
+    
+  }
+
+  .progress-moved1 .progress-bar3 {
+    width: 100%;
+    background-color: #3f57c0c0;
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgba(109, 62, 238, 0.699) 100%,
+      rgb(17, 62, 129) 100%,
+      transparent 75%,
+      transparent
+    );
+    transition: 1s linear;
+    transition-property: width, #93cff7;
+    
+  }
+
+  .progress-moved .progress-bar4 {
+    width: 100%;
+    background-color: #c03f99c0;
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgb(245, 156, 225) 100%,
+      rgb(112, 9, 81) 100%,
+      transparent 75%,
+      transparent
+    );
+    transition: 1s linear;
+    transition-property: width, #ebb2bf;
+    
+  }
+
+  .progress-moved .progress-bar5 {
+    width: 100%;
+    background-color: #c03f99c0;
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgb(245, 156, 225) 100%,
+      rgb(112, 9, 81) 100%,
+      transparent 75%,
+      transparent
+    );
+    transition: 1s linear;
+    transition-property: width, #ebb2bf;
+    
+  }
+
+  .progress-moved .progress-bar6 {
+    width: 100%;
+    background-color: #c03f99c0;
+    background-image: linear-gradient(
+      45deg,
+      
+      transparent 25%,
+      transparent 50%,
+      rgb(245, 156, 225) 100%,
+      rgb(112, 9, 81) 100%,
+      transparent 75%,
+      transparent
+    );
+    transition: 1s linear;
+    transition-property: width, #ebb2bf;
+    
+  }
