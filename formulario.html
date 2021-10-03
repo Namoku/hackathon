@@ -102,66 +102,8 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw" style="font-size:20px;color:rgba(12, 2, 90, 0.719)"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header" style="background-color: rebeccapurple;">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-white" style="background-color: rebeccapurple;" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
-                        
-
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-
-                                
-
-                            <a class="nav-link dropdown-toggle" href="formulario.html" id="userDropdown" role="button">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button">
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -177,36 +119,40 @@
 
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Age</label>
-                          <input type="number" class="form-control border-primary light rounded-pill" id="inputAge">
+                          <label for="inputAge" class="form-label">Age</label>
+                          <input type="number" class="form-control border-primary light rounded-pill" id="inputAge" name="inputAge">
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Sex</label><br>
-                          <select class="form-control border-primary light rounded-pill" aria-label=".form-select-lg example">
+                          <select class="form-control border-primary light rounded-pill" aria-label=".form-select-lg example" id="selectSex" name="selectSex">
                             <option selected hidden>Select</option>
                             <option value="1">Male</option>
                             <option value="2">Female</option>
                           </select>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkPregnant">
+                            <input type="checkbox" class="form-check-input" id="checkPregnant" name="checkPregnant">
                             <label class="form-check-label" for="checkPregnant">I'm pregnant</label>
+                        </div>
+                        <div class="mb-3">
+                          <label for="inputLocation" class="form-label">Location</label>
+                          <input type="number" class="form-control border-primary light rounded-pill" id="inputLocation" name="inputLocation" disabled>
                         </div>
                         <h3>Chronic diseases</h3>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkDis1">
+                            <input type="checkbox" class="form-check-input" id="checkDis1" name="checkDis1">
                             <label class="form-check-label" for="checkDis1">Hypertension</label>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkDis2">
+                            <input type="checkbox" class="form-check-input" id="checkDis2" name="checkDis2">
                             <label class="form-check-label" for="checkDis2">Diabetes</label>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkDis3">
+                            <input type="checkbox" class="form-check-input" id="checkDis3" name="checkDis3">
                             <label class="form-check-label" for="checkDis3">Obesity</label>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkDis4">
+                            <input type="checkbox" class="form-check-input" id="checkDis4" name="checkDis4">
 								<label class="form-check-label" for="checkDis4">Asthma</label>
 							</div>
                         <button type="submit" class="btn btn-primary">Save</button>
@@ -240,26 +186,6 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -272,10 +198,6 @@
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
