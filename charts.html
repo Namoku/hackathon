@@ -123,8 +123,8 @@
 						<!-- Page Heading -->
 						<h1 class="h3 mb-2 text-gray-800">Global pandemic data</h1>
 						<p class="mb-4">Global data on the current situation of covid.</p><br>
-						<div class="table-responsive">
-						</div>
+						<table id="table-responsive">
+						</table>
 
 					</div>
 					<!-- /.container-fluid -->
@@ -178,11 +178,49 @@
 		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 		<!-- Core plugin JavaScript-->
+		<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 		<!-- Custom scripts for all pages-->
 		<script src="js/sb-admin-2.min.js"></script>
+		<script src="js/papaparse.min.js"></script>
 
+		<script>
+			var dataSet;
+			Papa.parse("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/10-02-2021.csv", {
+				download: true,
+				complete: function(results) {
+					dataSet = results;
+					dataSet.data = dataSet.data.slice(0,-1);
+					$(document).ready(function() {
+						var dt = 
+						$('#table-responsive').DataTable( {
+							data: dataSet.data,
+							columns: [
+								{ name: "FIPS" },
+								{ name: "Admin2" },
+								{ name: "Province_State" },
+								{ name: "Country_Region", title: "Country" },
+								{ name: "Last_Update" },
+								{ name: "Lat" },
+								{ name: "Long_" },
+								{ name: "Confirmed", title: "Confirmed"},
+								{ name: "Deaths", title: "Deaths"},
+								{ name: "Recovered" },
+								{ name: "Active" },
+								{ name: "Combined_Key" },
+								{ name: "Incident_Rate" },
+								{ name: "Case_Fatality_Ratio" },
+							],
+							scrollX: true,
+							fixedHeader: true,
+							responsive: true
+						} );
+						dt.columns([0,1,2,4,5,6,11,12,13]).visible(false);
+					} );
+				}
+			});
+		</script>
 	</body>
 
 </html>

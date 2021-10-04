@@ -7,7 +7,7 @@ if (!empty($_GET)) {
 		$municipio = $_POST['municipio'];
 		$entidad = $_POST['entidad'];
 		$result = $mysqli->query('SELECT CASE
-			WHEN EDAD BETWEEN 0 and 18 THEN "0-18"
+			WHEN EDAD BETWEEN 0 and 17 THEN "0-17"
 			WHEN EDAD BETWEEN 18 and 29 THEN "18-29"
 			WHEN EDAD BETWEEN 30 and 39 THEN "30-39"
 			WHEN EDAD BETWEEN 40 and 49 THEN "40-49"
@@ -21,7 +21,7 @@ if (!empty($_GET)) {
 			FROM data
 			WHERE CLASIFICACION_FINAL IN (1, 2, 3) AND ENTIDAD_RES = (SELECT entidad.ID from entidad WHERE entidad.ENTIDAD = "'.$entidad.'") AND MUNICIPIO_RES = (SELECT municipio.ID from municipio WHERE municipio.MUNICIPIO = "'.$municipio.'")
 			GROUP BY CASE
-			WHEN EDAD BETWEEN 0 and 18 THEN "0-18"
+			WHEN EDAD BETWEEN 0 and 17 THEN "0-17"
 			WHEN EDAD BETWEEN 18 and 29 THEN "18-29"
 			WHEN EDAD BETWEEN 30 and 39 THEN "30-39"
 			WHEN EDAD BETWEEN 40 and 49 THEN "40-49"
@@ -73,7 +73,7 @@ if (!empty($_GET)) {
 	$getTopStates = \in_array('getTopStates',array_keys(\filter_input_array(INPUT_GET)));
 	if($getTopStates) {
 		$arr = array("error" => 1);
-		$result = $mysqli->query('SELECT COUNT(*) as TOTAL, (SELECT entidad.ENTIDAD from entidad where entidad.ID = ENTIDAD_RES) as ENTIDAD FROM data WHERE CLASIFICACION_FINAL IN (1, 2, 3) GROUP BY ENTIDAD_RES ORDER BY COUNT(*) DESC LIMIT 5');
+		$result = $mysqli->query('SELECT COUNT(*) as TOTAL, (SELECT entidad.ENTIDAD from entidad where entidad.ID = ENTIDAD_RES) as ENTIDAD FROM data WHERE CLASIFICACION_FINAL IN (1, 2, 3) GROUP BY ENTIDAD_RES ORDER BY COUNT(*) DESC');
 
 		if ($result) {
 			$arr = $result -> fetch_all(MYSQLI_ASSOC);
@@ -109,7 +109,7 @@ if (!empty($_GET)) {
 		$asma = $_POST['asma'];
 		$diabetes = $_POST['diabetes'];
 		$result = $mysqli->query('SELECT CASE
-			WHEN EDAD BETWEEN 0 and 18 THEN "0-18"
+			WHEN EDAD BETWEEN 0 and 17 THEN "0-17"
 			WHEN EDAD BETWEEN 18 and 29 THEN "18-29"
 			WHEN EDAD BETWEEN 30 and 39 THEN "30-39"
 			WHEN EDAD BETWEEN 40 and 49 THEN "40-49"
@@ -123,7 +123,7 @@ if (!empty($_GET)) {
 			FROM data
 			WHERE CLASIFICACION_FINAL IN (1, 2, 3) AND ENTIDAD_RES = (SELECT entidad.ID from entidad WHERE entidad.ENTIDAD = "'.$entidad.'") AND MUNICIPIO_RES = (SELECT municipio.ID from municipio WHERE municipio.MUNICIPIO = "'.$municipio.'") AND (UCI = 1 OR FECHA_DEF != "0000-00-00") AND OBESIDAD IN (2, '.$obesidad.') AND HIPERTENSION IN (2, '.$hipertension.') AND ASMA IN (2, '.$asma.') AND DIABETES IN (2, '.$diabetes.')
 			GROUP BY CASE
-			WHEN EDAD BETWEEN 0 and 18 THEN "0-18"
+			WHEN EDAD BETWEEN 0 and 17 THEN "0-17"
 			WHEN EDAD BETWEEN 18 and 29 THEN "18-29"
 			WHEN EDAD BETWEEN 30 and 39 THEN "30-39"
 			WHEN EDAD BETWEEN 40 and 49 THEN "40-49"
