@@ -1,5 +1,4 @@
 # ATV Pandemic
-====
 ## Link to App
 https://atvpandemic.co/
 ## HIGH-LEVEL PROJECT SUMMARY
