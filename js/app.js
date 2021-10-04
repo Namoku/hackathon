@@ -262,6 +262,7 @@ if (boton = document.getElementById("boton")) {
 			if (localStorage.formulario = JSON.stringify(formulario)) {
 				boton.innerText = "Done";
 				boton.className = "btn btn-success";
+				window.location.href = "../index.html";
 			}
 		}
 		else {
