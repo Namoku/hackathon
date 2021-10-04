@@ -27,92 +27,129 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+function formatDate(date){
+	var dd = date.getDate();
+	var mm = date.getMonth()+1;
+	var yyyy = date.getFullYear();
+	if(dd<10) {dd='0'+dd}
+	if(mm<10) {mm='0'+mm}
+	date = mm+'/'+dd+'/'+yyyy;
+	return date
+}
+
+function Last7Days () {
+	var result = [];
+	for (var i=6; i>=0; i--) {
+		var d = new Date();
+		d.setDate(d.getDate() - i);
+		result.push( d.getMonth() + "/" + d.getDate() )
+	}
+	return result;
+}
 // Area Chart Example
-var ctx = document.getElementById("myAreaChart");
-var myLineChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [{
-      label: "Earnings",
-      lineTension: 0.3,
-      backgroundColor: "rgba(78, 115, 223, 0.05)",
-      borderColor: "rgba(78, 115, 223, 1)",
-      pointRadius: 3,
-      pointBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointBorderColor: "rgba(78, 115, 223, 1)",
-      pointHoverRadius: 3,
-      pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-      pointHitRadius: 10,
-      pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
-    },
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'date'
-        },
-        gridLines: {
-          display: false,
-          drawBorder: false
-        },
-        ticks: {
-          maxTicksLimit: 7
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          maxTicksLimit: 5,
-          padding: 10,
-          // Include a dollar sign in the ticks
-          callback: function(value, index, values) {
-            return '$' + number_format(value);
-          }
-        },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
-        }
-      }],
-    },
-    legend: {
-      display: false
-    },
-    tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      intersect: false,
-      mode: 'index',
-      caretPadding: 10,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
-        }
-      }
-    }
-  }
-});
+function showTable(datas) {
+	var date = Last7Days();
+	var ctx = document.getElementById("myAreaChart");
+	var myLineChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: [date[0], date[1], date[2], date[3], date[4], date[5]],
+			datasets: [{
+				label: "Women",
+				lineTension: 0.3,
+				backgroundColor: "rgba(78, 115, 223, 0.05)",
+				borderColor: "rgba(78, 115, 223, 1)",
+				pointRadius: 3,
+				pointBackgroundColor: "rgba(78, 115, 223, 1)",
+				pointBorderColor: "rgba(78, 115, 223, 1)",
+				pointHoverRadius: 3,
+				pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+				pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+				pointHitRadius: 10,
+				pointBorderWidth: 2,
+				data: [datas[0].Dia6, datas[0].Dia5, datas[0].Dia4, datas[0].Dia3, datas[0].Dia2, datas[0].Dia],
+			},
+			{
+				label: "Men",
+				lineTension: 0.3,
+				backgroundColor: "rgba(18, 125, 223, 0.05)",
+				borderColor: "rgba(18, 125, 223, 1)",
+				pointRadius: 3,
+				pointBackgroundColor: "rgba(18, 125, 223, 1)",
+				pointBorderColor: "rgba(18, 125, 223, 1)",
+				pointHoverRadius: 3,
+				pointHoverBackgroundColor: "rgba(18, 125, 223, 1)",
+				pointHoverBorderColor: "rgba(18, 125, 223, 1)",
+				pointHitRadius: 10,
+				pointBorderWidth: 2,
+				data: [datas[1].Dia6, datas[1].Dia5, datas[1].Dia4, datas[1].Dia3, datas[1].Dia2, datas[1].Dia],
+			}],
+		},
+		options: {
+			maintainAspectRatio: false,
+			layout: {
+				padding: {
+					left: 10,
+					right: 25,
+					top: 25,
+					bottom: 0
+				}
+			},
+			scales: {
+				xAxes: [{
+					time: {
+						unit: 'date'
+					},
+					gridLines: {
+						display: false,
+						drawBorder: false
+					},
+					ticks: {
+						maxTicksLimit: 7
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						maxTicksLimit: 5,
+						padding: 10,
+						// Include a dollar sign in the ticks
+						callback: function(value, index, values) {
+							return number_format(value);
+						}
+					},
+					gridLines: {
+						color: "rgb(234, 236, 244)",
+						zeroLineColor: "rgb(234, 236, 244)",
+						drawBorder: false,
+						borderDash: [2],
+						zeroLineBorderDash: [2]
+					}
+				}],
+			},
+			legend: {
+				display: true
+			},
+			tooltips: {
+				backgroundColor: "rgb(255,255,255)",
+				bodyFontColor: "#858796",
+				titleMarginBottom: 10,
+				titleFontColor: '#6e707e',
+				titleFontSize: 14,
+				borderColor: '#dddfeb',
+				borderWidth: 1,
+				xPadding: 15,
+				yPadding: 15,
+				displayColors: false,
+				intersect: false,
+				mode: 'index',
+				caretPadding: 10,
+				callbacks: {
+					label: function(tooltipItem, chart) {
+						var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+						return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+					}
+				}
+			}
+		}
+	});
+}
