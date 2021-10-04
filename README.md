@@ -1,7 +1,7 @@
 # ATV Pandemic
-# Link to App
-https://atvpandemic.co/
 ====
+## Link to App
+https://atvpandemic.co/
 ## HIGH-LEVEL PROJECT SUMMARY
 Covid-19 is a problem that affects the world's population to this day, being especially risky for a certain sector of the population. For this reason, we have designed a smartphone application in which users can calculate the risk of mortality or hospitalization upon contracting the virus based on data such as geographic location, gender, age and chronic diseases.
 
