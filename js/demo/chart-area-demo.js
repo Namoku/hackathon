@@ -42,7 +42,7 @@ function Last7Days () {
 	for (var i=6; i>=0; i--) {
 		var d = new Date();
 		d.setDate(d.getDate() - i);
-		result.push( d.getMonth() + "/" + d.getDate() )
+		result.push( d.getMonth() + 1 + "/" + d.getDate() )
 	}
 	return result;
 }
@@ -57,14 +57,14 @@ function showTable(datas) {
 			datasets: [{
 				label: "Women",
 				lineTension: 0.3,
-				backgroundColor: "rgba(78, 115, 223, 0.05)",
-				borderColor: "rgba(78, 115, 223, 1)",
+				backgroundColor: "rgba(78, 115, 183, 0.05)",
+				borderColor: "rgba(78, 115, 183, 1)",
 				pointRadius: 3,
-				pointBackgroundColor: "rgba(78, 115, 223, 1)",
-				pointBorderColor: "rgba(78, 115, 223, 1)",
+				pointBackgroundColor: "rgba(78, 115, 183, 1)",
+				pointBorderColor: "rgba(78, 115, 183, 1)",
 				pointHoverRadius: 3,
-				pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-				pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+				pointHoverBackgroundColor: "rgba(78, 115, 183, 1)",
+				pointHoverBorderColor: "rgba(78, 115, 183, 1)",
 				pointHitRadius: 10,
 				pointBorderWidth: 2,
 				data: [datas[0].Dia6, datas[0].Dia5, datas[0].Dia4, datas[0].Dia3, datas[0].Dia2, datas[0].Dia],
