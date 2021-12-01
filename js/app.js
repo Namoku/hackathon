@@ -240,6 +240,10 @@ function showPosition(position) {
 			}
 			if (values = document.getElementsByClassName("h5 mb-0 font-weight-bold text-gray-800"))
 				showData(values);
+      if (values2 = document.getElementsByClassName("m-0 font-weight-bold text-primary")) {
+        values2[0].innerText = locationCityState["city"] + ": Daily active cases";
+        values2[1].innerText = locationCityState["city"] + ": Cases by sex";
+      }
 		}) .catch(e => { 
 			console.log(e);
 		});
